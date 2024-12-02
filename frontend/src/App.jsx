@@ -14,7 +14,7 @@ const TodoApp = () => {
   // Fetch tasks from backend
   const fetchTasks = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/tasks');
+      const response = await fetch('https://todo-app-7hw4.onrender.com/api/tasks');
       const data = await response.json();
       setTasks(data);
     } catch (error) {
@@ -29,7 +29,7 @@ const TodoApp = () => {
     if (!title.trim()) return;
 
     try {
-      const response = await fetch('http://localhost:5000/api/tasks', {
+      const response = await fetch('https://todo-app-7hw4.onrender.com/api/tasks', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ const TodoApp = () => {
   // Delete task
   const handleDeleteTask = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/tasks/${id}`, {
+      await fetch(`https://todo-app-7hw4.onrender.com/api/tasks/${id}`, {
         method: 'DELETE',
       });
 
